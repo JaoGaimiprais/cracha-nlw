@@ -1,0 +1,150 @@
+/* Cascating Stylesheet - Folha de Estilo em Cascata*/
+* {
+  margin: 0;
+}
+
+html,
+body {
+  /* hsl 
+  h = hell(cores)
+  s = saturação
+  l = luz */
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  /* webkit - diz que toda função depois dele (font-smoothing) vai funcionar so em navegadores webkit (Chrome, Safari etc) */
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  /* Maneira de visualizar o programa, mexe com o Layout
+  trabalha tanto no eixo x ou no y */
+  display: grid;
+  /* Alinha todos os Intens ao Centro */
+  place-items: center;
+}
+
+main {
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100%;
+  min-height: 812px;
+  height: 100vh;
+
+  color: var(--gray);
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Para fazer degradê
+#user_name {
+  background: -webkit-linear-gradient(left, #f80099, #fd892a);
+  background: linear-gradient(to right, #f80099, #fd892a);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}*/
+
+#rocketseat_build {
+  opacity: 0.6;
+}
+
+.avatar {
+  /* 16px(pixel) = 1rem */
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  /* Arruma o eixo z, eixo de profundidade */
+  z-index: 1;
+}
+
+/* Ele pega a primeira img da hieranquia */
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+
+  /* Essa função cobre a imagem no seu tamnho, sem ficar esticada */
+  object-fit: cover;
+  /* Trás formas, site de pesquisa: https://bennettfeely.com/clippy/ */
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--gray);
+  /* Decoração do Texto */
+  text-decoration: none;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  /* Decoração da Lista */
+  list-style: none;
+  padding: 0;
+  /* Todos os elementos ficam um ao lado do lado, no eixo x ou main 
+  o flex trablaha como eixo x e y*/
+  display: flex;
+  /* Espaçamento entre os elementos */
+  gap: 0.5rem;
+  /* Mexe no eixo x e equilibra para deixar tudo no centro */
+  justify-content: center;
+}
+
+@media (max-width: 425px) {
+  .avatar {
+    margin: 9rem auto 0;
+  }
+  ul {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    background: url(images/Desktop.svg) no-repeat center/cover;
+    background-color: #121214;
+  }
+
+  .avatar {
+    width: 10rem;
+    margin: 14.2rem auto 0;
+    position: relative;
+  }
+
+  .avatar > img {
+    width: 8rem;
+    height: 9.5rem;
+    object-fit: cover;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  ul {
+    margin-top: 2rem;
+  }
+}

@@ -1,10 +1,8 @@
 // Objeto
 const links_social_media = {
   github: 'JaoGaimiprais',
-  youtube: '',
   instagram: 'jv_smartins',
-  facebook: 'profile.php?id=100048077017850',
-  twitter: ''
+  facebook: 'profile.php?id=100048077017850'
 }
 // Cria a Função
 function change_social_media_links() {
